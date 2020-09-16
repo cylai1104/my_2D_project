@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class Player : MonoBehaviour
 {
     //909-916進度
@@ -11,9 +12,9 @@ public class Player : MonoBehaviour
 
     #region 欄位
     [Header("移動速度"), Range(0, 1000)]
-    public float speed = 5;
+    public float speed = 5f;
 
-    //public Vector2 limit = new Vector2(-3.2f, 3.2f);
+    public Vector2 limit = new Vector2(-3.2f, 3.2f);
 
 
 
@@ -27,10 +28,10 @@ public class Player : MonoBehaviour
         //以下兩種寫法差在哪
         //用槓掉的寫法沒有顯示錯誤但是不會動
 
-       
-        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, limit.x, limit.y), transform.position.y, transform.position.z);
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.2f, 3.2f), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, limit.x, limit.y), transform.position.y, transform.position.z);
+
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.2f, 3.2f), transform.position.y, transform.position.z);
 
         if (transform.localScale.x < 0)
         {
