@@ -3,8 +3,8 @@
 public class SpawnManager : MonoBehaviour
 {
     
-    [Header("生成間隔時間"), Range(0f, 3f)]
-    public float interval = 2f;
+    [Header("生成間隔時間")]
+    public float interval = 0.5f;
 
     private GameObject[] points;
     public GameObject[] sigs;

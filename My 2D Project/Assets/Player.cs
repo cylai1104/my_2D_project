@@ -74,7 +74,15 @@ public class Player : MonoBehaviour
 
 
     }
-
+    private void Catch(GameObject note)
+    {
+        //bool space = Input.GetKeyDown(KeyCode.Space);
+        //if (space)
+       // {
+            Destroy(note);
+        //}
+           
+    }
 
    
     #endregion
@@ -85,7 +93,11 @@ public class Player : MonoBehaviour
         Move();
         
     }
-    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "音符") Catch(collision.gameObject);
+       
+    }
     #endregion
 
 }
