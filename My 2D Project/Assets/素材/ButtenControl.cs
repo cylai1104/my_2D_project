@@ -3,16 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 
 
-public class ButtonEvent : MonoBehaviour
+public class ButtonControl : MonoBehaviour
 {
-    void Start()
-    {
-        Button button = GetComponent<Button>();
-       // button.onClick.AddListener(Clickdown);
-    }
-
-   // void Clickdown();
-    //{}
-
+    public void Catch()
+    { }
 
 }
