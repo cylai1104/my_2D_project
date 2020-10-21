@@ -74,7 +74,10 @@ public class Player : MonoBehaviour
 
 
     }
-    private void Catch(GameObject note)
+
+    private GameObject note;
+
+    public void Catch()
     {
         //bool space = Input.GetKeyDown(KeyCode.Space);
         //if (space)
@@ -95,7 +98,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "音符") Catch(collision.gameObject);
+        if (collision.tag == "音符") note = collision.gameObject;
        
     }
     #endregion

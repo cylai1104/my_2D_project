@@ -7,12 +7,18 @@ public class SpawnManager : MonoBehaviour
     public float interval = 0.5f;
 
     private GameObject[] points;
-    public GameObject[] sigs;
+    public GameObject[]notes;
+
+    //
+    private int indexRandom;
+
+    public float[] times;
+    public Vector3[] ppoints;
 
     private void Awake()
     {
         points = GameObject.FindGameObjectsWithTag("生成點");
-        sigs = GameObject.FindGameObjectsWithTag("音符");
+        notes = GameObject.FindGameObjectsWithTag("音符");
         InvokeRepeating("Spawn", 0, interval);
 
         
@@ -21,8 +27,8 @@ public class SpawnManager : MonoBehaviour
     private void Spawn()
     {
         int rd = Random.Range(0, points.Length);
-        int rs = Random.Range(0, sigs.Length);
-        Instantiate(sigs[rs], points[rd].transform.position, points[rd].transform.rotation);
+        int ns = Random.Range(0, notes.Length);
+        Instantiate(notes[ns], points[rd].transform.position, points[rd].transform.rotation);
     
     }
 }

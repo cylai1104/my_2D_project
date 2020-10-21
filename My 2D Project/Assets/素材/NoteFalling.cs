@@ -25,7 +25,7 @@ public class NoteFalling : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, (distance / 5f) * Time.deltaTime);
-    }//我设置了1秒达到。
+    }
 
 
 }
