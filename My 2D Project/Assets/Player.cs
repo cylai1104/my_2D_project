@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     #region 欄位
     [Header("移動速度"), Range(0, 1000)]
-    public float speed = 5f;
+    public float speed = 0.5f;
 
     public Vector2 limit = new Vector2(-3.2f, 3.2f);
 
