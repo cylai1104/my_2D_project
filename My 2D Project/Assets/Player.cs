@@ -15,6 +15,26 @@ public class Player : MonoBehaviour
     public float speed = 0.5f;
 
     public Vector2 limit = new Vector2(-3.2f, 3.2f);
+    [Header("音效區域")]
+    public AudioClip facatch;
+    public AudioClip socatch;
+    public AudioClip racatch;
+    public AudioClip sicatch;
+    public AudioClip c4catch;
+    public AudioClip c5catch;
+    public AudioClip recatch;
+    public AudioClip micatch;
+   
+    public AudioSource aud;
+
+    private bool playso;
+    private bool playsi;
+    private bool playc4;
+    private bool playc5;
+    private bool playmi;
+    private bool playre;
+    private bool playra;
+    private bool playfa;
 
 
 
@@ -25,8 +45,7 @@ public class Player : MonoBehaviour
     private void Move()
     {
 
-        //以下兩種寫法差在哪
-        //用槓掉的寫法沒有顯示錯誤但是不會動
+       
 
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, limit.x, limit.y), transform.position.y, transform.position.z);
@@ -77,30 +96,81 @@ public class Player : MonoBehaviour
 
     private GameObject note;
 
+   
     public void Catch()
     {
-        //bool space = Input.GetKeyDown(KeyCode.Space);
-        //if (space)
-       // {
-            Destroy(note);
-        //}
-           
+        Destroy(note);
+        if (playso) Catchso();
+        if (playra) Catchra();
+        if (playsi) Catchsi();
+        if (playmi) Catchmi();
+        if (playre) Catchre();
+        if (playc5) Catchc5();
+        if (playfa) Catchfa();
+        if (playc4) Catchc4();
     }
 
-   
+    
+    public void Catchso()
+    {
+        aud.PlayOneShot(socatch, 0.2f);
+    }
+    public void Catchra()
+    {
+        aud.PlayOneShot(racatch, 0.2f);
+        
+    }
+    public void Catchsi()
+    {
+        aud.PlayOneShot(sicatch, 0.2f);
+        
+    }
+    public void Catchmi()
+    {
+        aud.PlayOneShot(micatch, 0.2f);
+            }
+    public void Catchre()
+    {
+        
+        aud.PlayOneShot(recatch, 0.2f);
+    }
+    public void Catchc5()
+    {
+        aud.PlayOneShot(c5catch, 0.2f);
+    }
+    public void Catchc4()
+    {
+        aud.PlayOneShot(c4catch, 0.2f);
+    }
+    public void Catchfa()
+    {
+        aud.PlayOneShot(facatch, 0.2f);
+      
+    }
+
     #endregion
 
     #region 事件
     private void Update()
     {
         Move();
+
         
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "音符") note = collision.gameObject;
-       
+        if (collision.name == "so(Clone)") playso = true;
+        if (collision.name == "fa(Clone)") playfa = true;
+        if (collision.name == "mi(Clone)") playmi = true;
+        if (collision.name == "re(Clone)") playre = true;
+        if (collision.name == "c4(Clone)") playc4 = true;
+        if (collision.name == "ra(Clone)") playra = true;
+        if (collision.name == "si(Clone)") playsi = true;
+        if (collision.name == "c5(Clone)") playc5 = true;
+
     }
+   
     #endregion
 
 }
