@@ -14,4 +14,11 @@ public class SceneControl : MonoBehaviour
     {
         Invoke("ChangeScene", 0.3f);
     }
+
+    public void Quit()
+    {
+        // 關閉遊戲並離開
+        // 應用程式.離開
+        Application.Quit();
+    }
 }

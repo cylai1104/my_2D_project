@@ -36,7 +36,10 @@ public class Player : MonoBehaviour
     private bool playra;
     private bool playfa;
 
-
+    [Header("結束畫面")]
+    public GameObject final;
+    [Header("關卡")]
+    public GameObject challenge;
 
     #endregion
 
@@ -114,6 +117,7 @@ public class Player : MonoBehaviour
     public void Catchso()
     {
         aud.PlayOneShot(socatch, 0.2f);
+        Clear();
     }
     public void Catchra()
     {
@@ -148,6 +152,12 @@ public class Player : MonoBehaviour
       
     }
 
+    private void Clear()
+    {
+        final.SetActive(true);
+        challenge.SetActive(false);
+    }
+   
     #endregion
 
     #region 事件
