@@ -53,19 +53,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11184}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11464}
     - Class: 114
-      Script: {instanceID: 12190}
+      Script: {instanceID: 12182}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 12888}
     - Class: 114
-      Script: {instanceID: 13388}
+      Script: {instanceID: 13380}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13662}
     - Class: 114
-      Script: {instanceID: 14290}
+      Script: {instanceID: 14282}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -112,27 +112,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11184}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11464}
     - Class: 114
-      Script: {instanceID: 12190}
+      Script: {instanceID: 12182}
     - Class: 114
-      Script: {instanceID: 12884}
+      Script: {instanceID: 12876}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 12888}
     - Class: 114
-      Script: {instanceID: 13264}
+      Script: {instanceID: 13256}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 13330}
     - Class: 114
-      Script: {instanceID: 13388}
+      Script: {instanceID: 13380}
     - Class: 114
-      Script: {instanceID: 13584}
+      Script: {instanceID: 13576}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13662}
     - Class: 114
-      Script: {instanceID: 14290}
+      Script: {instanceID: 14282}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -454,7 +454,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 1323eef9d147251002ba91159313f60d
+      Hash: 90859bdcbe2e3b73a28f51f7520d5406
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -526,7 +526,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: f8e79718250c95c3d3a41e4b440d0004
+      Hash: 36546044b70cc621e363858d7a3cfbea
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnManager
@@ -726,4 +726,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - "Assets/\u4E3B\u756B\u9762.unity"
   - "Assets/\u904A\u6232\u756B\u9762.unity"
-  playerPath: C:/Users/appedu/Documents/GitHub/my_2D_project/musicmanv2.apk
+  playerPath: C:/Users/appedu/Documents/GitHub/my_2D_project/musicmanv3.apk

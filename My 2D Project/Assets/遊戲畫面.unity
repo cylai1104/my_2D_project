@@ -176,6 +176,21 @@ MonoBehaviour:
   interval: 2
   points: []
   mi: {fileID: 0}
+  noteAssigns:
+  - {fileID: 5389030831352946528, guid: 64e96624009728a4da59079b4320e07e, type: 3}
+  - {fileID: 8344529379367910058, guid: 057c20c0a1e3b0a458368fa51f7288ba, type: 3}
+  - {fileID: 6871297906226421563, guid: 93f4b0dbb5e8f2549902ee8ba6ea87f5, type: 3}
+  - {fileID: 5441010546186293783, guid: ab6ba48a59309b74ca6e07b6faf7fc76, type: 3}
+  - {fileID: 3912458061054902450, guid: 7c126c2c6dc9ee248a6b6603aa1cbfce, type: 3}
+  - {fileID: 8166275556765586052, guid: 430913d3dcc57604a91572c279b2f390, type: 3}
+  - {fileID: 2490667577325003439, guid: ccaa6d579e30d0e44bb3aa45e4188554, type: 3}
+  - {fileID: 2215926939746222447, guid: ad39f3b4fb3883940b349cb79a629db2, type: 3}
+  assignTimes:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
 --- !u!4 &82570901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2215926939039637606, guid: ad39f3b4fb3883940b349cb79a629db2,
@@ -1443,7 +1458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000007621129, y: 32}
+  m_AnchoredPosition: {x: 0, y: 32}
   m_SizeDelta: {x: 313.70303, y: 169.38733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208213433

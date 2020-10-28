@@ -16,6 +16,12 @@ public class Player : MonoBehaviour
 
     public Vector2 limit = new Vector2(-3.2f, 3.2f);
     [Header("音效區域")]
+    
+   
+    public AudioSource aud;
+
+    private GameObject target;
+
     public AudioClip facatch;
     public AudioClip socatch;
     public AudioClip racatch;
@@ -24,17 +30,14 @@ public class Player : MonoBehaviour
     public AudioClip c5catch;
     public AudioClip recatch;
     public AudioClip micatch;
-   
-    public AudioSource aud;
-
-    private bool playso;
-    private bool playsi;
-    private bool playc4;
-    private bool playc5;
-    private bool playmi;
-    private bool playre;
-    private bool playra;
-    private bool playfa;
+    //private bool playso;
+    //private bool playsi;
+    //private bool playc4;
+    //private bool playc5;
+    //private bool playmi;
+    //private bool playre;
+    //private bool playra;
+    //private bool playfa;
 
     [Header("結束畫面")]
     public GameObject final;
@@ -99,58 +102,64 @@ public class Player : MonoBehaviour
 
     private GameObject note;
 
-   
+    private void Awake()
+    {
+        aud = GetComponent<AudioSource>();
+    }
     public void Catch()
     {
-        Destroy(note);
-        if (playso) Catchso();
-        if (playra) Catchra();
-        if (playsi) Catchsi();
-        if (playmi) Catchmi();
-        if (playre) Catchre();
-        if (playc5) Catchc5();
-        if (playfa) Catchfa();
-        if (playc4) Catchc4();
+        if (target)
+        {
+            if (target.name == "fa(Clone)") aud.PlayOneShot(facatch, 1f);
+            if (target.name == "so(Clone)") aud.PlayOneShot(socatch, 1f);
+            if (target.name == "ra(Clone)") aud.PlayOneShot(racatch, 1f);
+            if (target.name == "si(Clone)") aud.PlayOneShot(sicatch, 1f);
+            if (target.name == "mi(Clone)") aud.PlayOneShot(micatch, 1f);
+            if (target.name == "re(Clone)") aud.PlayOneShot(recatch, 1f);
+            if (target.name == "c4(Clone)") aud.PlayOneShot(c4catch, 1f);
+            if (target.name == "c5(Clone)") aud.PlayOneShot(c5catch, 1f);
+            Destroy(target);
+        }
     }
 
     
     public void Catchso()
     {
-        aud.PlayOneShot(socatch, 0.2f);
+       // aud.PlayOneShot(socatch, 0.2f);
         Clear();
     }
-    public void Catchra()
-    {
-        aud.PlayOneShot(racatch, 0.2f);
+    //public void Catchra()
+   // {
+       // aud.PlayOneShot(racatch, 0.2f);
         
-    }
-    public void Catchsi()
-    {
-        aud.PlayOneShot(sicatch, 0.2f);
+   // }
+   // public void Catchsi()
+    //{
+        //aud.PlayOneShot(sicatch, 0.2f);
         
-    }
-    public void Catchmi()
-    {
-        aud.PlayOneShot(micatch, 0.2f);
-            }
-    public void Catchre()
-    {
+    //}
+   // public void Catchmi()
+   // {
+        //aud.PlayOneShot(micatch, 0.2f);
+   // }
+   // public void Catchre()
+   // {
         
-        aud.PlayOneShot(recatch, 0.2f);
-    }
-    public void Catchc5()
-    {
-        aud.PlayOneShot(c5catch, 0.2f);
-    }
-    public void Catchc4()
-    {
-        aud.PlayOneShot(c4catch, 0.2f);
-    }
-    public void Catchfa()
-    {
-        aud.PlayOneShot(facatch, 0.2f);
+        //aud.PlayOneShot(recatch, 0.2f);
+   // }
+   // public void Catchc5()
+    //{
+        //aud.PlayOneShot(c5catch, 0.2f);
+    //}
+   // public void Catchc4()
+   // {
+        //aud.PlayOneShot(c4catch, 0.2f);
+  //  }
+    //public void Catchfa()
+    //{
+        //aud.PlayOneShot(facatch, 0.2f);
       
-    }
+   // }
 
     private void Clear()
     {
@@ -167,20 +176,29 @@ public class Player : MonoBehaviour
 
         
     }
+
+   
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "音符") note = collision.gameObject;
-        if (collision.name == "so(Clone)") playso = true;
-        if (collision.name == "fa(Clone)") playfa = true;
-        if (collision.name == "mi(Clone)") playmi = true;
-        if (collision.name == "re(Clone)") playre = true;
-        if (collision.name == "c4(Clone)") playc4 = true;
-        if (collision.name == "ra(Clone)") playra = true;
-        if (collision.name == "si(Clone)") playsi = true;
-        if (collision.name == "c5(Clone)") playc5 = true;
-
+        //if (collision.tag == "音符") note = collision.gameObject;
+        //if (collision.name == "so(Clone)") playso = true;
+        //if (collision.name == "fa(Clone)") playfa = true;
+        //if (collision.name == "mi(Clone)") playmi = true;
+        //if (collision.name == "re(Clone)") playre = true;
+        //if (collision.name == "c4(Clone)") playc4 = true;
+        //if (collision.name == "ra(Clone)") playra = true;
+        //if (collision.name == "si(Clone)") playsi = true;
+        //if (collision.name == "c5(Clone)") playc5 = true;
     }
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "fa(Clone)"|| collision.name == "so(Clone)" || collision.name == "ra(Clone)" || collision.name == "re(Clone)" || collision.name == "mi(Clone)" || collision.name == "si(Clone)" || collision.name == "c4(Clone)" || collision.name == "do(Clone)" ) target = collision.gameObject;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "fa(Clone)" || collision.name == "so(Clone)" || collision.name == "ra(Clone)" || collision.name == "re(Clone)" || collision.name == "mi(Clone)" || collision.name == "si(Clone)" || collision.name == "c4(Clone)" || collision.name == "do(Clone)") target = null;
+    }
     #endregion
 
 }

@@ -29,10 +29,10 @@ public class SpawnManager : MonoBehaviour
    
    
    // [Space(50)]
-   //[Header("指定生成音符")]
- //   public GameObject[] noteAssigns;
-  // [Header("指定生成時間")]
-   // public float[] assignTimes;
+   [Header("指定生成音符")]
+    public GameObject[] noteAssigns;
+   [Header("指定生成時間")]
+    public float[] assignTimes;
    // [Header("指定生成位置")]
    // public int[] assignPoints;
     
